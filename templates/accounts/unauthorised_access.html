@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}UNAUTHORISED ACCESS FOR ACCOUNTS{% endblock title %}
+{% block content %}
+
+  <p>THIS IS UNAUTHORISED ACCESS</p>
+
+<h1>You attempted an unauthorised access</h1>
+
+
+{% endblock content %} 
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="{% static 'js/passwordChangeValidation.js' %}"></script>
+{% endblock javascript %}

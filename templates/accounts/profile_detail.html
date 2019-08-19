@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}PROFILE DETAIL	 FOR ACCOUNTS{% endblock title %}
+{% block content %}
+  
+<div class="slm-content-container">
+  {% if profile.profile_pic %}
+    <p>
+	  <img class="slm-profile-pic" src="{{ profile.profile_pic.url }}">
+    </p>
+    <p>
+	  <figcaption class="slm-figcaption">{{ profile.pic_caption }}</figcaption>
+    </p> 
+  {% endif %}
+  
+  <p><strong>City:</strong></p><p>{{ profile.city }}</p>
+  <p><strong>Country:</strong></p><p>{{ profile.country }}</p>
+  <p><strong>About</strong></p><p>{{ profile.about }}</p>  
+  <p><strong>Website:</strong></p>
+  <p><a href="{{ profile.website }}" target="_blank">Profile Website</a></p>
+  <p><strong>Created on:</strong></p><p>{{ profile.create_dt|date:'l, d M Y' }}</p>
+  <p><strong>Last Updated:</strong></p><p>{{ profile.update_dt }}</p>
+</div>
+
+{% endblock content %} 

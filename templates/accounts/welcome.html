@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}WELCOME PAGE FOR ACCOUNTS{% endblock title %}
+{% block content %}
+
+<div class="slm-content-container">
+
+  <h3>THIS IS WELCOME PAGE</h3><br>
+  
+  
+  <p>Tell us more about yourself</p><br>
+  <p><a href="{% url 'accounts:profile_update' request.user.pk %}">
+    Create a profile</a></p>
+
+</div>
+
+{% endblock content %} 

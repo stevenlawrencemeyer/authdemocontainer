@@ -1,0 +1,65 @@
+p {
+    margin:0;
+    line-height: normal;
+
+}
+
+.slm-hide {
+    display: none;
+}
+.slm-form-container, .slm-content-container, .slm-form-error-container{
+
+        width:60%;
+        margin: auto;
+        .slm-textarea, .slm-profile-pic {
+            line-height: normal;
+        }
+        span#email-duplicate {
+            line-height: normal;
+        }
+    
+    p {
+        line-height: 1.5;
+    }
+    
+    .btn {
+        margin-top: 6px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .slm-form-container, .slm-content-container, .slm-form-error-container {
+
+            width: 90%;
+            margin: auto;
+
+    }
+
+}
+
+
+.slm-form-container {
+    form {
+
+        input {
+            width: 300px;
+        }// end input
+        
+        input[class*='btn'] {
+            width: auto;
+        }
+        
+    }// end form
+    
+}// end slm-form-container
+
+.slm-profile-pic {
+    max-width: 320px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.slm-figcaption {
+    margin: 4px 0 8px 0;
+}

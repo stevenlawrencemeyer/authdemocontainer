@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}REGISTER FOR ACCOUNTS{% endblock title %}
+
+{% block content %}
+  <p>THIS IS MEMBER UPDATE FOR ACCOUNTS</p>
+  
+  
+  <p>form  {{ form.display_username.value}}</p>
+  
+
+
+  {% include "baseform.html" with form=form %}  
+
+{% endblock content %} 
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="{% static 'js/regFormValidation.js' %}"></script>
+
+{% endblock javascript %}
+
+

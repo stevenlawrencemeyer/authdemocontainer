@@ -1,0 +1,37 @@
+p {
+  margin: 0;
+  line-height: normal; }
+
+.slm-hide {
+  display: none; }
+
+.slm-form-container, .slm-content-container, .slm-form-error-container {
+  width: 60%;
+  margin: auto; }
+  .slm-form-container .slm-textarea, .slm-form-container .slm-profile-pic, .slm-content-container .slm-textarea, .slm-content-container .slm-profile-pic, .slm-form-error-container .slm-textarea, .slm-form-error-container .slm-profile-pic {
+    line-height: normal; }
+  .slm-form-container span#email-duplicate, .slm-content-container span#email-duplicate, .slm-form-error-container span#email-duplicate {
+    line-height: normal; }
+  .slm-form-container p, .slm-content-container p, .slm-form-error-container p {
+    line-height: 1.5; }
+  .slm-form-container .btn, .slm-content-container .btn, .slm-form-error-container .btn {
+    margin-top: 6px; }
+
+@media screen and (max-width: 600px) {
+  .slm-form-container, .slm-content-container, .slm-form-error-container {
+    width: 90%;
+    margin: auto; } }
+.slm-form-container form input {
+  width: 300px; }
+.slm-form-container form input[class*='btn'] {
+  width: auto; }
+
+.slm-profile-pic {
+  max-width: 320px;
+  height: auto;
+  margin-bottom: 8px; }
+
+.slm-figcaption {
+  margin: 4px 0 8px 0; }
+
+/*# sourceMappingURL=base1.css.map */

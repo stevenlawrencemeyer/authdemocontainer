@@ -1,0 +1,35 @@
+<div class="slm-form-error-container">
+{% if form.errors %}
+    {% for field in form %}
+        
+      {% for error in form.non_field_errors %}
+         <p class="non-field-errors">
+            {{ error|escape }}
+        </p>
+       {% endfor %}
+    {% endfor %}
+    
+{% endif %}
+</div>
+
+<div class="slm-form-container">
+	
+
+  <form method="POST">
+    {% csrf_token %}
+	  
+{% for f in form %}
+
+  <p><label for="id_{{ f.name }}">{{ f.label }}</label><br>
+  {{ f }}
+    {% for err in f.errors %}
+      <p class="field-errors">{{ err|escape }}</p>
+    {% endfor %}
+    <br>
+   </p>
+
+{% endfor %}
+
+  <input class="btn btn-success" type="submit" value="Submit" id="slm-submit">
+  </form>
+</div> 

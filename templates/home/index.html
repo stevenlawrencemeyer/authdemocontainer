@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}INDEX FOR HOME{% endblock title %}
+{% block content %}
+  <p>THIS IS INDEX FOR HOME</p>
+  <div class="slm-content-container">
+    <h4>What would you like to do?</h4>
+    {% if request.user.is_authenticated %}
+        <p><a href="{% url 'accounts:member_detail' request.user.pk %}">
+            View your member record</a></p>
+       <p><a href="{% url 'accounts:member_update' request.user.pk %}">
+           Update your member record</a></p>
+        <p><a href="{% url 'accounts:email_change' request.user.pk %}">
+            Update your email addresses</a></p>
+        <p><a href="{% url 'accounts:profile_detail' request.user.pk %}">
+            View your profile</a></p>
+        <p><a href="{% url 'accounts:profile_update' request.user.pk %}">
+            Update your profile</a></p>
+        <p><a href="{% url 'accounts:password_change' %}">
+            Change your password</a></p>
+      <p><a href="{% url 'accounts:logout' %}">Logout</a></p>
+    {% else %}
+      <p><a href="{% url 'accounts:register' %}">Register as a user
+      </a></p>
+      
+      <p><a href="{% url 'accounts:login' %}">Login</a></p>
+      <p><a href="{% url 'accounts:password_reset' %}">
+        Reset your password</a></p>
+    {% endif %}
+        
+  
+  
+  
+  
+  </div>
+{% endblock content %} 

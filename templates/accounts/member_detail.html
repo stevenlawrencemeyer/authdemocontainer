@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}INDEX FOR ACCOUNTS{% endblock title %}
+{% block content %}
+
+<div class="slm-content-container">
+  <p>THIS IS MEMBER_DETAIL FOR ACCOUNTS</p>
+
+  <p><strong>User Name:</strong></p>
+    <p>{{ member.display_username }}
+  </p>  
+  
+  <p><strong>First Name:</strong></p>
+    <p>{{ member.first_name }}
+  </p>  
+  
+  <p><strong>Middle Initials:</strong></p>
+    <p>{{ member.mid_initials }}
+  </p>  
+  
+  <p><strong>Last Name:</strong></p>
+    <p>{{ member.last_name }}
+  </p>  
+  
+  <p><strong>Email:</strong></p>
+    <p>{{ member.email }}
+  </p>  
+
+  <p><strong>Alternative Email:</strong></p>
+    <p>{{ member.alt_email }}
+  </p> 
+
+  
+  <p><strong>Date Registered:</strong></p>
+    <p>{{ member.create_dt }}
+  </p>  
+  
+  <p><strong>Last Updated:</strong></p>
+    <p>{{ member.update_dt }}
+  </p> 
+  
+ 
+  <p><strong>Real username: </strong></p>
+    <p>{{ member.username }}
+  </p>
+
+  <p><strong>Slug: </strong></p>
+    <p>{{ member.slug }}
+  </p>
+  
+  <p><a href="{% url 'accounts:member_update' member.pk %}">Update Member Details</a></p>
+   
+</div>  
+
+
+
+
+  
+{% endblock content %} 

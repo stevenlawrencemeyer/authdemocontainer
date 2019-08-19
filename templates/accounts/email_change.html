@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}REGISTER FOR ACCOUNTS{% endblock title %}
+
+{% block content %}
+  <p>THIS IS EMAIL CHANGE FOR ACCOUNTS</p>
+  
+ 
+  <div class="slm-form-container">
+  <h1>WARNING!</h1><br>
+  <p>
+	  You will receive a confirmatory email with a link at your <strong>CURRENT</strong>
+	  primary or alternate email address
+  </p>
+  <p>
+    <strong class="slm-red">NB: Your CURRENT email addresses, NOT your 
+    new ones</strong>
+  </p>
+	  Your account will be decativated until we receive your response 
+  </p>
+  
+  <p><strong>
+      	In the interim you will not be able to access your account
+      	 or reset your password so be VERY CAREFUL
+	  
+  </strong></p><br>
+
+  <form method="POST">
+    {% csrf_token %}
+    
+  <p><label for="id_email"><strong>Email</strong></label><br>
+  <input type="email" name="email" maxlength="100" id="id_email"
+  value={{ tstuff.email }}>
+   </p><br>
+   
+
+
+  <p><label for="id_alt_email"><strong>Alternate Email</strong></label><br>
+  {% if tstuff.alt_email is not none %}
+  <input type="email" name="alt_email" maxlength="100" id="id_alt_email"
+  value={{ tstuff.alt_email }}>
+  {% else %}
+  <input type="email" name="alt_email" maxlength="100" 
+  id="id_alt_email">
+
+  {% endif %}  
+    <br>
+   </p>
+
+   {% if tstuff.alt_email is not none %}
+   
+  <br><p>
+  <label for="id_use_alt_email"><strong>Use Alt Email for confirmation</strong></label><br>
+  <input type="checkbox" name="use_alt_email" maxlength="100" 
+  id="id_use_alt_email">
+    <br>
+   </p>
+   
+   {% endif %}
+   
+  <p class="slm-hide"><label for="id_is_active">Is Active</label><br>
+  <input type="checkbox" name="is_active" id="id_email">
+   </p>
+   
+   <p>
+   <input class="btn btn-success" type="submit" value="Submit" id="slm-submit">
+   </p>
+  </form>  
+
+
+    
+  
+  
+  
+  </form>
+ 
+  </div>
+
+
+
+{% endblock content %} 
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="{% static 'js/emailChangeFormValidation.js' %}"></script>
+<script src="{% static 'js/regFormAjax.js' %}"></script>
+{% endblock javascript %}
+
+
